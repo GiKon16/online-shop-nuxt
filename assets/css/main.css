@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import 'tailwindcss';
+
+:root {
+	--primary-color: #ffffff;
+	--accent-color: #ef3e1c;
+	--secondary-accent-color: #741cef;
+	--background-color: #fff6eb;
+	--black-color: #000000;
+	--gray-color-1: #3a3a3a;
+	--gray-color-2: #686868;
+	--gray-color-3: #919191;
+	--gray-color-4: #ebebeb;
+	--glass-color: #d3d3d340;
+	--dark-glass-color: #00000033;
+	--dim-color: #f5f5f5;
+}
+
+@theme {
+	--color-primary: var(--primary-color);
+	--color-accent: var(--accent-color);
+	--color-secondary-accent: var(--secondary-accent-color);
+	--color-background: var(--background-color);
+	--color-black: var(--black-color);
+	--color-gray-1: var(--gray-color-1);
+	--color-gray-2: var(--gray-color-2);
+	--color-gray-3: var(--gray-color-3);
+	--color-gray-4: var(--gray-color-4);
+	--color-glass: var(--glass-color);
+	--color-dark-glass: var(--dark-glass-color);
+	--color-dim: var(--dim-color);
+}
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	padding: 2rem 3rem;
+}
+
+ul {
+	list-style: none;
+}

@@ -1,0 +1,14 @@
+{
+	// https://nuxt.com/docs/guide/concepts/typescript
+	"extends": "./.nuxt/tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": ".", // Указываем корень проекта
+		"paths": {
+			"@assets/*": ["assets/*"],
+			"@entities/*": ["entities/*"],
+			"@features/*": ["features/*"],
+			"@shared/*": ["shared/*"],
+			"@pages/*": ["pages/*"]
+		}
+	}
+}
