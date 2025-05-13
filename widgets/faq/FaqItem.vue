@@ -29,7 +29,7 @@ const openCloseFaq = () => {
 			</button>
 		</div>
 		<div class="overflow-hidden">
-			<span class="pb-3 block">{{ description }}</span>
+			<span class="pt-6 pb-3 block">{{ description }}</span>
 		</div>
 	</li>
 </template>

@@ -11,6 +11,6 @@ import FaqList from '../widgets/faq/FaqList.vue';
 			:faqItems="DELIVERY_PAYMENT_FAQ"
 			class="basis-1/2"
 		/>
-		<AppHelpBlock />
+		<AppHelpBlock class="basis-1/2 self-start" />
 	</div>
 </template>

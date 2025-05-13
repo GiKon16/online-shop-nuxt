@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import AppButton from '../shared/ui/AppButton.vue';
+import AppInput from '../shared/ui/AppInput.vue';
+import AppPhoneCodeSelect from '../shared/ui/AppPhoneCodeSelect.vue';
+
+const phone = ref('');
 </script>
 
 <template>
@@ -12,14 +16,8 @@ import AppButton from '../shared/ui/AppButton.vue';
 			</p>
 		</div>
 		<div class="flex gap-2.5">
-			<div class="w-30 p-2.5 bg-glass rounded-full">
-				<div class="w-full h-full bg-primary rounded-full"></div>
-			</div>
-			<input
-				class="flex-1 p-6 bg-glass rounded-full outline-accent text-xl font-medium placeholder:text-red"
-				type="text"
-				placeholder="Номер телефона"
-			/>
+			<AppPhoneCodeSelect />
+			<AppInput type="text" placeholder="Номер телефона" v-model="phone" />
 		</div>
 		<div class="flex flex-col gap-4">
 			<AppButton content="Свяжитесь со мной" />
