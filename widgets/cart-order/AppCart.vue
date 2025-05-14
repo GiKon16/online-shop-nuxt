@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { TransitionPresets, useTransition } from '@vueuse/core';
-import { useCartStore } from '../../features/cart/store/useCartStore';
+import { useCartStore } from '../../features/cart/useCartStore';
 import AppButton from '../../shared/ui/AppButton.vue';
 import ProductInCartCard from './ProductInCartCard.vue';
 const cartStore = useCartStore();
@@ -10,6 +10,11 @@ const displayedPrice = useTransition(totalPriceRef, {
 	duration: 500,
 	transition: TransitionPresets.easeOutCubic,
 });
+
+const orderProducts = () => {
+	navigateTo('/order');
+	cartStore.closeCart();
+};
 </script>
 
 <template>
@@ -56,7 +61,7 @@ const displayedPrice = useTransition(totalPriceRef, {
 				Ваша корзина пуста, чтобы оформить заказ - добавьте чего-нибудь
 				вкусненького в корзину =)
 			</div>
-			<div v-if="totalPriceRef !== 0" class="flex-1 flex flex-col gap-8">
+			<div v-if="totalPriceRef !== 0" class="flex-1 flex flex-col gap-10">
 				<ProductInCartCard
 					v-for="{
 						id,
@@ -84,7 +89,7 @@ const displayedPrice = useTransition(totalPriceRef, {
 						>₽{{ Math.round(displayedPrice) }}</span
 					>
 				</div>
-				<AppButton content="Оформить заказ" />
+				<AppButton content="Оформить заказ" @click="orderProducts" />
 			</div>
 		</div>
 	</Transition>

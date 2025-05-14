@@ -13,7 +13,7 @@ defineProps<ProductsListProps>();
 	<TransitionGroup
 		name="list"
 		tag="ul"
-		class="grid grid-cols-2 gap-8 relative transition-all"
+		class="min-h-100 grid grid-cols-2 gap-8 relative transition-all"
 	>
 		<ProductCard
 			v-for="{

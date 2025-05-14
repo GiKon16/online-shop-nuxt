@@ -3,9 +3,12 @@ type AppInputProps = {
 	type: string;
 	placeholder: string;
 	modelValue: string;
+	size?: 'big' | 'default';
 };
 
-defineProps<AppInputProps>();
+withDefaults(defineProps<AppInputProps>(), {
+	size: 'default',
+});
 
 const emit = defineEmits<{
 	(e: 'update:modelValue', value: string): void;
@@ -18,7 +21,8 @@ const handleInput = (e: Event) => {
 
 <template>
 	<input
-		class="flex-1 p-6 bg-glass rounded-full outline-accent text-xl font-medium placeholder:text-red"
+		class="flex-1 bg-glass rounded-full outline-accent font-medium"
+		:class="size === 'big' ? 'p-6 text-xl' : 'p-4 text-base'"
 		:type="type"
 		:placeholder="placeholder"
 		:value="modelValue"

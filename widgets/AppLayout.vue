@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AppHeader from './AppHeader.vue';
-import AppCart from './cart/AppCart.vue';
+import AppCart from './cart-order/AppCart.vue';
 </script>
 
 <template>

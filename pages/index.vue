@@ -14,10 +14,11 @@ const activeCategory = ref('Все');
 </template> -->
 
 <script setup lang="ts">
-import { CATEGORIES } from '../features/categories/constants/categories';
-import { PRODUCTS } from '../features/products/constants/products';
+import { CATEGORIES } from '../features/categories/constants';
+import { PRODUCTS } from '../features/products/constants';
 import AppTabs from '../shared/ui/AppTabs.vue';
 import ProductsList from '../widgets/products/ProductsList.vue';
+import AppSlider from '../widgets/slider/AppSlider.vue';
 const activeCategory = ref('Все');
 const filteredProducts = computed(() => {
 	if (activeCategory.value === 'Все') {
@@ -28,8 +29,11 @@ const filteredProducts = computed(() => {
 </script>
 
 <template>
-	<div class="flex flex-col gap-8">
-		<AppTabs :tabs="CATEGORIES" v-model="activeCategory" />
-		<ProductsList :filteredProducts="filteredProducts" />
+	<div class="flex flex-col gap-15">
+		<AppSlider />
+		<div class="flex flex-col gap-8">
+			<AppTabs :tabs="CATEGORIES" v-model="activeCategory" />
+			<ProductsList :filteredProducts="filteredProducts" />
+		</div>
 	</div>
 </template>

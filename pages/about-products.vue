@@ -11,6 +11,6 @@ import FaqList from '../widgets/faq/FaqList.vue';
 			:faqItems="ABOUT_PRODUCTS_FAQ"
 			class="basis-1/2"
 		/>
-		<AppHelpBlock class="basis-1/2 self-start" />
+		<AppHelpBlock class="basis-1/2 self-start" withBg />
 	</div>
 </template>

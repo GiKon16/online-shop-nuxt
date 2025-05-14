@@ -61,7 +61,7 @@ const activeIndicatorStyle = computed(() => {
 			v-for="tab in tabs"
 			:key="tab"
 			@click="emit('update:modelValue', tab)"
-			class="flex justify-center flex-1 relative overflow-hidden py-4 rounded-full cursor-pointer text-gray-2 font-medium"
+			class="flex justify-center flex-1 relative overflow-hidden py-1 rounded-full cursor-pointer text-gray-2 font-medium"
 			:class="modelValue === tab && 'text-primary'"
 		>
 			<span class="z-1 transition duration-500 ease">

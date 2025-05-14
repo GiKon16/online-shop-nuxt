@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ArrowTopRightIconSVG from '../../assets/icons/ArrowTopRightIconSVG.svg';
 import type { Product } from '../../entities/product';
-import { useCartStore } from '../../features/cart/store/useCartStore';
+import { useCartStore } from '../../features/cart/useCartStore';
 import FireIcon from './FireIcon.vue';
 defineProps<Product>();
 
@@ -38,9 +38,11 @@ const cartStore = useCartStore();
 			<p>{{ description }}</p>
 			<span class="text-[1.75rem] font-medium">₽{{ price }}</span>
 		</div>
-		<div class="min-w-80 h-80 bg-accent rounded-3xl"></div>
+		<div class="min-w-80 h-80 overflow-hidden rounded-3xl">
+			<img :src="imgSrc" :alt="name" class="w-full h-full object-cover" />
+		</div>
 		<button
-			class="flex items-center gap-4 absolute bottom-10 right-10 px-3 py-2 pl-6 bg-glass rounded-full cursor-pointer text-primary group tranistion duration-300 ease hover:gap-6"
+			class="flex items-center gap-4 absolute bottom-10 right-10 px-3 py-2 pl-6 bg-glass rounded-full backdrop-blur-xl cursor-pointer text-primary group tranistion duration-300 ease hover:gap-6"
 			@click="
 				cartStore.addProductToCart({
 					id,

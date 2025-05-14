@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import CartIconSVG from '@assets/icons/CartIconSVG.svg';
-import UserIconSVG from '@assets/icons/UserIconSVG.svg';
-import { useCartStore } from '../features/cart/store/useCartStore';
+import { useCartStore } from '../features/cart/useCartStore';
 
 const cartStore = useCartStore();
+const route = useRoute();
 </script>
 
 <template>
@@ -25,17 +25,18 @@ const cartStore = useCartStore();
 		</nav>
 		<div class="flex items-center gap-2.5">
 			<button
-				class="flex items-center gap-1.5 py-4 px-5 bg-glass rounded-full cursor-pointer text-black font-medium"
+				class="flex items-center gap-1.5 py-4 px-5 bg-glass rounded-full cursor-pointer text-black font-medium tranistion-all duration-300"
+				:class="route.path === '/order' && '-translate-y-30'"
 				@click="cartStore.openCart()"
 			>
 				<CartIconSVG />
 				Корзина
 			</button>
-			<div
+			<!-- <div
 				class="w-13 h-13 flex items-center justify-center bg-accent rounded-full"
 			>
 				<UserIconSVG />
-			</div>
+			</div> -->
 		</div>
 	</header>
 </template>
